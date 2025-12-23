@@ -109,33 +109,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar transparente ao rolar
+// Navbar transparente e highlight de menu - CONSOLIDADO
 const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+// Função consolidada de scroll - mais eficiente
+function handleScroll() {
     const currentScroll = window.pageYOffset;
     
-    // Adiciona sombra ao navbar quando rolar
+    // Navbar shadow
     if (currentScroll > 0) {
         navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
     } else {
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
     
-    lastScroll = currentScroll;
-});
-
-// Botão Voltar ao Topo
-const backToTopButton = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+    // Highlight menu ativo
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        
+        if (currentScroll > sectionTop && currentScroll <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.style.color = '');
+            if (navLink) {
+                navLink.style.color = 'var(--primary-color)';
+            }
+        }
+    });
+    
+    // Botão voltar ao topo
+    if (currentScroll > 300) {
         backToTopButton.classList.add('visible');
     } else {
         backToTopButton.classList.remove('visible');
     }
-});
+    
+    lastScroll = currentScroll;
+}
+
+// Debounce otimizado
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = window.requestAnimationFrame(handleScroll);
+}, { passive: true });
 
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({
@@ -144,10 +166,10 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Animação de entrada dos elementos ao rolar (melhorada)
+// Animação de entrada dos elementos ao rolar (otimizada)
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -156,122 +178,51 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
             entry.target.classList.add('animated');
+            observer.unobserve(entry.target); // Para de observar após animar
         }
     });
 }, observerOptions);
 
-// Elementos para animar com diferentes delays
+// Elementos para animar - sem delays que causam lentidão
 const animateElements = document.querySelectorAll('.diferencial-card, .receita-card, .contato-card, .pedido-box, .quem-sou-content, .depoimento-card');
 
-animateElements.forEach((el, index) => {
+animateElements.forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+    el.style.transition = 'all 0.5s ease'; // Transição mais rápida
     observer.observe(el);
 });
 
-// Animação especial para os badges flutuantes
+// Animação dos badges flutuantes - mais leve
 const badges = document.querySelectorAll('.badge-float');
-badges.forEach((badge, index) => {
+badges.forEach((badge) => {
+    badge.style.opacity = '0';
+    badge.style.transition = 'opacity 0.3s ease';
     setTimeout(() => {
         badge.style.opacity = '1';
-        badge.style.transform = 'scale(1)';
-    }, 500 + (index * 300));
-    badge.style.opacity = '0';
-    badge.style.transform = 'scale(0.8)';
-    badge.style.transition = 'all 0.5s ease';
+    }, 300);
 });
 
 // Highlight do menu ativo baseado na seção visível
 const sections = document.querySelectorAll('section[id]');
 
-function highlightNavOnScroll() {
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) {
-                navLink.classList.add('active');
-                navLink.style.color = 'var(--primary-color)';
-            }
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavOnScroll);
-
-// Efeito parallax suave no hero
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-// Prevenir comportamento padrão dos links do WhatsApp
-document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Deixar o link funcionar normalmente
-        return true;
-    });
-});
-
 // Mensagem de boas-vindas no console
 console.log('%c🧁 Bolos da Wilma', 'color: #ff69b4; font-size: 24px; font-weight: bold;');
 console.log('%cBolos caseiros feitos com amor! ❤️', 'color: #666; font-size: 14px;');
 
-// Lazy loading de imagens (caso sejam adicionadas no futuro)
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback para navegadores antigos
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-
-// Validação e formatação automática do WhatsApp (caso adicione formulário no futuro)
-function formatWhatsApp(numero) {
-    // Remove caracteres não numéricos
-    numero = numero.replace(/\D/g, '');
-    
-    // Adiciona código do país se não tiver
-    if (!numero.startsWith('55')) {
-        numero = '55' + numero;
-    }
-    
-    return numero;
-}
-
-// Easter egg: Confetes ao clicar no logo 3 vezes (melhorado)
+// Easter egg simplificado: Confetes ao clicar no logo 3 vezes
 let logoClicks = 0;
 const logo = document.querySelector('.logo');
 
 logo.addEventListener('click', () => {
     logoClicks++;
-    logo.style.transform = 'scale(1.1)';
-    setTimeout(() => {
-        logo.style.transform = 'scale(1)';
-    }, 100);
     
     if (logoClicks === 3) {
         createConfetti();
         logoClicks = 0;
         
-        // Mensagem especial
         const message = document.createElement('div');
-        message.textContent = '🎉 Você descobriu o segredo! Ganhe 5% extra no seu próximo pedido! 🎉';
+        message.textContent = '🎉 Ganhe 5% extra no seu próximo pedido! 🎉';
         message.style.cssText = `
             position: fixed;
             top: 50%;
@@ -279,26 +230,21 @@ logo.addEventListener('click', () => {
             transform: translate(-50%, -50%);
             background: linear-gradient(135deg, #ff69b4, #ff1493);
             color: white;
-            padding: 2rem 3rem;
+            padding: 2rem;
             border-radius: 20px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             z-index: 9999;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             text-align: center;
-            animation: bounceIn 0.5s ease;
         `;
         document.body.appendChild(message);
         
         setTimeout(() => {
-            message.style.opacity = '0';
-            message.style.transform = 'translate(-50%, -50%) scale(0.8)';
-            message.style.transition = 'all 0.3s ease';
-            setTimeout(() => message.remove(), 300);
-        }, 3000);
+            message.remove();
+        }, 2500);
     }
     
-    // Reset contador após 2 segundos
     setTimeout(() => {
         logoClicks = 0;
     }, 2000);
@@ -351,121 +297,25 @@ function createConfetti() {
             confetti.remove();
         }, 3000);
     }
-    
-    // Emoji de bolo gigante no centro
-    const cake = document.createElement('div');
-    cake.textContent = '🎂';
-    cake.style.cssText = `
-        position: fixed;
-        font-size: 100px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) scale(0) rotate(0deg);
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        z-index: 9999;
-        pointer-events: none;
-    `;
-    
-    document.body.appendChild(cake);
-    
-    setTimeout(() => {
-        cake.style.transform = 'translate(-50%, -50%) scale(1) rotate(360deg)';
-    }, 10);
-    
-    setTimeout(() => {
-        cake.style.transform = 'translate(-50%, -50%) scale(0) rotate(720deg)';
-    }, 1500);
-    
-    setTimeout(() => {
-        cake.remove();
-    }, 2100);
 }
 
-// Performance: Debounce para eventos de scroll
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Aplicar debounce aos eventos de scroll
-window.addEventListener('scroll', debounce(highlightNavOnScroll, 10));
-
-// Efeito de Parallax mais suave e otimizado
-let ticking = false;
-let lastScrollY = 0;
-
-window.addEventListener('scroll', () => {
-    lastScrollY = window.pageYOffset;
-    
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const hero = document.querySelector('.hero');
-            if (hero && lastScrollY < window.innerHeight) {
-                hero.style.transform = `translateY(${lastScrollY * 0.5}px)`;
-            }
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
-
-// Tracking de Cliques nos Botões de Pedido
+// Tracking de Cliques nos Botões de Pedido (simplificado)
 const pedidoButtons = document.querySelectorAll('a[href*="#pedido"], a[href*="wa.me"], .btn-pedir-rapido');
 pedidoButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        console.log('📨 Clique em botão de pedido:', button.textContent.trim());
-        
-        button.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            button.style.transform = '';
-        }, 150);
+    button.addEventListener('click', () => {
+        console.log('📨 Clique em botão de pedido');
     });
 });
 
-// Efeito 3D nos cards
-const cards = document.querySelectorAll('.receita-card, .depoimento-card, .diferencial-card');
-cards.forEach(card => {
-    card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = '';
-    });
-});
-
-// Animação WhatsApp flutuante
+// Animação WhatsApp flutuante (simplificada)
 window.addEventListener('load', () => {
     const whatsappFloat = document.querySelector('.whatsapp-float');
     if (whatsappFloat) {
-        setTimeout(() => {
-            whatsappFloat.style.opacity = '1';
-            whatsappFloat.style.transform = 'scale(1)';
-        }, 1000);
-        whatsappFloat.style.opacity = '0';
-        whatsappFloat.style.transform = 'scale(0)';
-        whatsappFloat.style.transition = 'all 0.5s ease';
+        whatsappFloat.style.opacity = '1';
     }
 });
 
-// Carregar animações apenas quando necessário
+// Carregar animações quando DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
     console.log('✅ Site carregado com sucesso!');
