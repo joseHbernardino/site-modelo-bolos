@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bolos da Wilma - Bolos caseiros artesanais feitos com amor e ingredientes selecionados">
+    <title>Bolos da Wilma - Bolos Caseiros Artesanais</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🧁 Bolos da Wilma</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#quem-sou" class="nav-link">Quem sou</a></li>
+                <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                <li><a href="#receitas" class="nav-link">Receitas</a></li>
+                <li><a href="#pedido" class="nav-link btn-pedido">Faça o pedido</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido de bolo." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Peça pelo WhatsApp">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="25" fill="#25D366"/>
+            <path d="M35.5 14.3C33.4 12.2 30.6 11 27.6 11C21.3 11 16.2 16.1 16.2 22.4C16.2 24.4 16.7 26.3 17.7 28L16.1 34L22.2 32.4C23.8 33.3 25.7 33.8 27.6 33.8C33.9 33.8 39 28.7 39 22.4C39 19.4 37.8 16.6 35.5 14.3ZM27.6 31.9C25.9 31.9 24.3 31.4 22.9 30.6L22.6 30.4L19.3 31.2L20.1 28L19.9 27.7C19 26.2 18.5 24.5 18.5 22.7C18.5 17.4 22.8 13.1 28.1 13.1C30.6 13.1 32.9 14 34.6 15.7C36.3 17.4 37.2 19.7 37.2 22.2C37.2 27.5 32.9 31.9 27.6 31.9ZM32.9 24.7C32.6 24.6 31.2 23.9 30.9 23.8C30.6 23.7 30.4 23.6 30.2 23.9C30 24.2 29.5 24.9 29.3 25.1C29.1 25.3 29 25.3 28.7 25.2C28.4 25.1 27.5 24.8 26.4 23.8C25.6 23.1 25 22.2 24.8 21.9C24.7 21.6 24.8 21.5 25 21.3C25.1 21.2 25.3 21 25.4 20.8C25.5 20.6 25.6 20.5 25.7 20.3C25.8 20.1 25.7 19.9 25.7 19.8C25.7 19.7 25 18.3 24.8 17.7C24.6 17.1 24.3 17.2 24.1 17.2C23.9 17.2 23.7 17.2 23.5 17.2C23.3 17.2 23 17.2 22.7 17.5C22.4 17.8 21.7 18.5 21.7 19.9C21.7 21.3 22.7 22.7 22.9 22.9C23 23.1 25 26.2 28.2 27.4C28.9 27.7 29.5 27.9 29.9 28C30.6 28.2 31.2 28.2 31.7 28.1C32.3 28 33.4 27.4 33.6 26.8C33.8 26.2 33.8 25.7 33.8 25.6C33.7 25.5 33.2 25.3 32.9 24.7Z" fill="white"/>
+        </svg>
+        <span class="whatsapp-pulse"></span>
+    </a>
+
+    <!-- Seção Home -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        
+        <!-- Badges Flutuantes -->
+        <div class="floating-badges">
+            <div class="badge-float badge-1">
+                <span class="badge-icon">⭐</span>
+                <div class="badge-text">
+                    <strong>Avaliação 5.0</strong>
+                    <small>500+ clientes</small>
+                </div>
+            </div>
+            <div class="badge-float badge-2">
+                <span class="badge-icon">🚚</span>
+                <div class="badge-text">
+                    <strong>Entrega Rápida</strong>
+                    <small>Em toda região</small>
+                </div>
+            </div>
+            <div class="badge-float badge-3">
+                <span class="badge-icon">🏆</span>
+                <div class="badge-text">
+                    <strong>Premiado</strong>
+                    <small>Melhor da região</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container hero-content">
+            <span class="hero-badge">✨ Mais de 5.000 bolos entregues ✨</span>
+            <h2 class="hero-title">Bolos Caseiros que Derretem na Boca</h2>
+            <p class="hero-subtitle">Sabor autêntico, qualidade premium e entrega garantida.<br>Transforme seus momentos especiais em memórias inesquecíveis!</p>
+            <div class="hero-buttons">
+                <a href="#pedido" class="btn btn-primary pulse-animation">
+                    🎂 Fazer Pedido Agora
+                </a>
+                <a href="#receitas" class="btn btn-secondary-outline">
+                    👀 Ver Sabores
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5000">0</span>
+                    <span class="stat-label">Bolos Entregues</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Clientes Felizes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Anos de Experiência</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Elementos decorativos animados -->
+        <div class="hero-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Promoção Especial -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-badge">🔥 OFERTA ESPECIAL</div>
+                <h3>Peça Hoje e Ganhe 10% de Desconto!</h3>
+                <p>Válido para pedidos feitos nas próximas <span id="countdown" class="countdown-timer">24:00:00</span></p>
+                <a href="#pedido" class="btn btn-promo">⚡ Aproveitar Oferta Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Quem Sou -->
+    <section id="quem-sou" class="quem-sou">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Sou</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="quem-sou-content">
+                <div class="quem-sou-image">
+                    <div class="image-placeholder">
+                        <span>👩‍🍳</span>
+                    </div>
+                </div>
+                <div class="quem-sou-text">
+                    <h3>Wilma - A mestre confeiteira</h3>
+                    <p>Olá! Sou a Wilma e minha paixão por confeitaria começou há mais de 15 anos, quando descobri que fazer bolos era mais do que uma habilidade - era uma forma de levar alegria e sabor para as pessoas que amo.</p>
+                    <p>Cada bolo que faço carrega todo o meu carinho e dedicação. Uso apenas ingredientes selecionados e receitas que foram aperfeiçoadas ao longo dos anos, garantindo que cada fatia seja uma experiência única e inesquecível.</p>
+                    <p>Meu objetivo é fazer com que seus momentos especiais sejam ainda mais memoráveis com bolos que encantam os olhos e conquistam o paladar!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section id="diferenciais" class="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Diferenciais</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">O que torna os Bolos da Wilma únicos e especiais</p>
+            </div>
+            <div class="diferenciais-grid">
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">🌟</div>
+                    <h3>Ingredientes Premium</h3>
+                    <p>Utilizamos apenas ingredientes de primeira qualidade, frescos e selecionados para garantir o melhor sabor</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">❤️</div>
+                    <h3>Feito com Amor</h3>
+                    <p>Cada bolo é preparado artesanalmente com dedicação e carinho, como se fosse para minha própria família</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">🎨</div>
+                    <h3>Personalização</h3>
+                    <p>Criamos bolos personalizados de acordo com seu gosto e ocasião, tornando seu momento ainda mais especial</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">🏠</div>
+                    <h3>100% Caseiro</h3>
+                    <p>Produção artesanal sem conservantes ou produtos industrializados, mantendo o sabor autêntico da confeitaria caseira</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">✨</div>
+                    <h3>Sabor Incomparável</h3>
+                    <p>Receitas exclusivas desenvolvidas e aperfeiçoadas ao longo de anos de experiência na confeitaria</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">🚚</div>
+                    <h3>Entrega Pontual</h3>
+                    <p>Compromisso com prazo de entrega, garantindo que seu bolo chegue fresquinho no momento certo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Receitas -->
+    <section id="receitas" class="receitas">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas Receitas</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Confira alguns dos nossos bolos mais pedidos</p>
+            </div>
+            <div class="receitas-grid">
+                <div class="receita-card" data-aos="fade-up">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🍫</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo de Chocolate</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(150+)</span></div>
+                        </div>
+                        <p>Massa fofinha de chocolate com recheio cremoso e cobertura de brigadeiro. Irresistível para os amantes de chocolate!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">🔥 Mais Pedido</span>
+                            <span class="receita-preco">A partir de <strong>R$ 45</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="receita-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🍰</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo de Cenoura</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(120+)</span></div>
+                        </div>
+                        <p>O clássico bolo de cenoura com cobertura de chocolate que derrete na boca. Perfeito para qualquer ocasião!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">👑 Tradicional</span>
+                            <span class="receita-preco">A partir de <strong>R$ 40</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="receita-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🎂</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo Prestígio</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(95+)</span></div>
+                        </div>
+                        <p>Deliciosa combinação de chocolate com coco. Uma explosão de sabores que vai te conquistar!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">✨ Especial</span>
+                            <span class="receita-preco">A partir de <strong>R$ 50</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="receita-card" data-aos="fade-up">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🍓</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo de Morango</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(110+)</span></div>
+                        </div>
+                        <p>Massa suave com recheio de creme e morangos frescos. Leve e refrescante, perfeito para festas!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">💕 Favorito</span>
+                            <span class="receita-preco">A partir de <strong>R$ 55</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="receita-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🍋</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo de Limão</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(80+)</span></div>
+                        </div>
+                        <p>Massa macia com o toque cítrico do limão siciliano. Refrescante e saboroso!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">🌿 Refrescante</span>
+                            <span class="receita-preco">A partir de <strong>R$ 48</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="receita-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="receita-image">
+                        <div class="image-placeholder">🥕</div>
+                        <div class="receita-overlay">
+                            <a href="#pedido" class="btn-pedir-rapido">🛒 Pedir Agora</a>
+                        </div>
+                    </div>
+                    <div class="receita-content">
+                        <div class="receita-header">
+                            <h3>Bolo Red Velvet</h3>
+                            <div class="receita-rating">⭐⭐⭐⭐⭐ <span>(75+)</span></div>
+                        </div>
+                        <p>O famoso bolo aveludado com cream cheese. Sofisticado e delicioso!</p>
+                        <div class="receita-footer">
+                            <span class="receita-tag">💎 Premium</span>
+                            <span class="receita-preco">A partir de <strong>R$ 60</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="receitas-footer">
+                <p>✨ Também fazemos bolos personalizados para ocasiões especiais! ✨</p>
+                <a href="#pedido" class="btn btn-secondary">Solicite seu bolo personalizado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Mais de 500 clientes satisfeitos compartilham suas experiências</p>
+            </div>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card" data-aos="zoom-in">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-texto">"O bolo de chocolate estava perfeito! Todos na festa elogiaram muito. A Wilma é uma artista na confeitaria. Super recomendo!"</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-avatar">👩</div>
+                        <div class="autor-info">
+                            <strong>Maria Silva</strong>
+                            <span>Aniversário de 15 anos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-texto">"Melhor bolo de cenoura que já comi na vida! Fofinho, saboroso e a cobertura é divina. Já virei cliente fiel da Wilma!"</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-avatar">👨</div>
+                        <div class="autor-info">
+                            <strong>João Santos</strong>
+                            <span>Café da manhã especial</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="depoimento-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="depoimento-texto">"Pedi o bolo Red Velvet para meu casamento e foi um sucesso absoluto! Lindo e delicioso. Todos pediram o contato!"</p>
+                    <div class="depoimento-autor">
+                        <div class="autor-avatar">👰</div>
+                        <div class="autor-info">
+                            <strong>Ana Oliveira</strong>
+                            <span>Casamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span class="trust-icon">✅</span>
+                    <span>Ingredientes Premium</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">🏆</span>
+                    <span>Melhor Avaliado</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">💯</span>
+                    <span>100% Satisfação</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-icon">🚚</span>
+                    <span>Entrega Garantida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Faça o Pedido -->
+    <section id="pedido" class="pedido">
+        <div class="container">
+            <div class="section-header">
+                <h2>Faça seu Pedido</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Entre em contato e transforme sua celebração em um momento inesquecível!</p>
+            </div>
+            
+            <div class="pedido-destaque">
+                <div class="pedido-destaque-item">
+                    <div class="destaque-icon">⏰</div>
+                    <div class="destaque-text">
+                        <strong>Pedido Antecipado</strong>
+                        <p>Mínimo 48 horas</p>
+                    </div>
+                </div>
+                <div class="pedido-destaque-item">
+                    <div class="destaque-icon">👍</div>
+                    <div class="destaque-text">
+                        <strong>Garantia de Qualidade</strong>
+                        <p>100% satisfação</p>
+                    </div>
+                </div>
+                <div class="pedido-destaque-item">
+                    <div class="destaque-icon">🚚</div>
+                    <div class="destaque-text">
+                        <strong>Entrega Pontual</strong>
+                        <p>No horário combinado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedido-content">
+                <div class="pedido-info">
+                    <h3>🎂 Como Fazer seu Pedido</h3>
+                    <div class="pedido-steps-grid">
+                        <div class="step-card">
+                            <div class="step-icon">1</div>
+                            <h4>Entre em Contato</h4>
+                            <p>Clique no botão do WhatsApp e inicie a conversa com a gente</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">2</div>
+                            <h4>Escolha o Sabor</h4>
+                            <p>Informe o sabor desejado ou peça sugestões personalizadas</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">3</div>
+                            <h4>Defina os Detalhes</h4>
+                            <p>Tamanho, decoração, quantidade de pessoas e data de entrega</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">4</div>
+                            <h4>Confirme e Aguarde</h4>
+                            <p>Após confirmação, seu bolo será preparado com todo carinho</p>
+                        </div>
+                    </div>
+
+                    <div class="pedido-tamanhos">
+                        <h4>📊 Tamanhos Disponíveis</h4>
+                        <div class="tamanhos-grid">
+                            <div class="tamanho-item">
+                                <strong>Pequeno</strong>
+                                <span>Até 10 pessoas</span>
+                            </div>
+                            <div class="tamanho-item">
+                                <strong>Médio</strong>
+                                <span>Até 20 pessoas</span>
+                            </div>
+                            <div class="tamanho-item">
+                                <strong>Grande</strong>
+                                <span>Até 40 pessoas</span>
+                            </div>
+                            <div class="tamanho-item">
+                                <strong>Personalizado</strong>
+                                <span>Consulte-nos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pedido-cta">
+                    <div class="pedido-box">
+                        <div class="whatsapp-icon-big">
+                            <svg width="80" height="80" viewBox="0 0 50 50" fill="none">
+                                <circle cx="25" cy="25" r="24" fill="#25D366"/>
+                                <path d="M35.5 14.3C33.4 12.2 30.6 11 27.6 11C21.3 11 16.2 16.1 16.2 22.4C16.2 24.4 16.7 26.3 17.7 28L16.1 34L22.2 32.4C23.8 33.3 25.7 33.8 27.6 33.8C33.9 33.8 39 28.7 39 22.4C39 19.4 37.8 16.6 35.5 14.3ZM27.6 31.9C25.9 31.9 24.3 31.4 22.9 30.6L22.6 30.4L19.3 31.2L20.1 28L19.9 27.7C19 26.2 18.5 24.5 18.5 22.7C18.5 17.4 22.8 13.1 28.1 13.1C30.6 13.1 32.9 14 34.6 15.7C36.3 17.4 37.2 19.7 37.2 22.2C37.2 27.5 32.9 31.9 27.6 31.9ZM32.9 24.7C32.6 24.6 31.2 23.9 30.9 23.8C30.6 23.7 30.4 23.6 30.2 23.9C30 24.2 29.5 24.9 29.3 25.1C29.1 25.3 29 25.3 28.7 25.2C28.4 25.1 27.5 24.8 26.4 23.8C25.6 23.1 25 22.2 24.8 21.9C24.7 21.6 24.8 21.5 25 21.3C25.1 21.2 25.3 21 25.4 20.8C25.5 20.6 25.6 20.5 25.7 20.3C25.8 20.1 25.7 19.9 25.7 19.8C25.7 19.7 25 18.3 24.8 17.7C24.6 17.1 24.3 17.2 24.1 17.2C23.9 17.2 23.7 17.2 23.5 17.2C23.3 17.2 23 17.2 22.7 17.5C22.4 17.8 21.7 18.5 21.7 19.9C21.7 21.3 22.7 22.7 22.9 22.9C23 23.1 25 26.2 28.2 27.4C28.9 27.7 29.5 27.9 29.9 28C30.6 28.2 31.2 28.2 31.7 28.1C32.3 28 33.4 27.4 33.6 26.8C33.8 26.2 33.8 25.7 33.8 25.6C33.7 25.5 33.2 25.3 32.9 24.7Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Peça pelo WhatsApp!</h3>
+                        <p class="pedido-horario">🕒 <strong>Horário de Atendimento</strong><br>
+Segunda a Sábado: 9h às 18h</p>
+                        
+                        <a href="https://wa.me/5511999999999?text=Olá%2C%20Wilma%21%20Gostaria%20de%20fazer%20um%20pedido%20de%20bolo.%20Pode%20me%20ajudar%3F" class="btn btn-whatsapp btn-whatsapp-large" target="_blank" rel="noopener noreferrer">
+                            <span class="whatsapp-btn-icon">💬</span>
+                            Fazer Pedido Agora
+                        </a>
+                        
+                        <div class="pedido-garantias">
+                            <div class="garantia-item">
+                                <span>✅</span> Resposta rápida
+                            </div>
+                            <div class="garantia-item">
+                                <span>✅</span> Orçamento sem compromisso
+                            </div>
+                            <div class="garantia-item">
+                                <span>✅</span> Pagamento facilitado
+                            </div>
+                        </div>
+                        
+                        <p class="pedido-observacao">
+                            💡 <em>Dica: Quanto antes fizer seu pedido, mais opções de personalização terá disponível!</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Estamos prontos para atender você!</p>
+            </div>
+            <div class="contato-grid">
+                <div class="contato-card">
+                    <div class="contato-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p>(11) 99999-9999</p>
+                    <a href="https://wa.me/5511999999999" class="contato-link" target="_blank" rel="noopener noreferrer">Enviar mensagem</a>
+                </div>
+                <div class="contato-card">
+                    <div class="contato-icon">📧</div>
+                    <h3>E-mail</h3>
+                    <p>contato@bolosdawilma.com.br</p>
+                    <a href="mailto:contato@bolosdawilma.com.br" class="contato-link">Enviar e-mail</a>
+                </div>
+                <div class="contato-card">
+                    <div class="contato-icon">📍</div>
+                    <h3>Localização</h3>
+                    <p>São Paulo - SP</p>
+                    <p class="contato-detail">Atendemos toda a região</p>
+                </div>
+                <div class="contato-card">
+                    <div class="contato-icon">🕒</div>
+                    <h3>Horário</h3>
+                    <p>Segunda a Sábado</p>
+                    <p class="contato-detail">9h às 18h</p>
+                </div>
+            </div>
+            <div class="social-media">
+                <h3>Siga-nos nas Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <span>📘</span> Facebook
+                    </a>
+                    <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+                        <span>📸</span> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h3>🧁 Bolos da Wilma</h3>
+                        <p class="footer-slogan">Transformando momentos especiais em memórias deliciosas desde 2010</p>
+                    </div>
+                    <p class="footer-description">
+                        Especializada em bolos caseiros artesanais, nossa missão é levar sabor, qualidade e carinho em cada fatia. 
+                        Cada bolo é preparado com ingredientes selecionados e muito amor.
+                    </p>
+                    <div class="footer-social">
+                        <h4>Siga-nos</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook">
+                                <span>👍</span>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="Instagram">
+                                <span>📸</span>
+                            </a>
+                            <a href="https://wa.me/5511999999999" class="social-link" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                                <span>💬</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">🏠 Início</a></li>
+                        <li><a href="#quem-sou">👩‍🍳 Quem Sou</a></li>
+                        <li><a href="#diferenciais">✨ Diferenciais</a></li>
+                        <li><a href="#receitas">🎂 Receitas</a></li>
+                        <li><a href="#pedido">🛒 Fazer Pedido</a></li>
+                        <li><a href="#contato">📞 Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>Informações</h4>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Localização</strong>
+                            <p>São Paulo - SP<br>Atendemos toda a região</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <div>
+                            <strong>Horário</strong>
+                            <p>Seg a Sáb: 9h às 18h<br>Domingo: Fechado</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div>
+                            <strong>E-mail</strong>
+                            <p>contato@bolosdawilma.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Entre em Contato</h4>
+                    <div class="contact-highlight">
+                        <div class="contact-phone">
+                            <span class="phone-icon">📱</span>
+                            <div>
+                                <strong>(11) 99999-9999</strong>
+                                <p>WhatsApp</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de mais informações." class="btn-footer-whatsapp" target="_blank" rel="noopener noreferrer">
+                            💬 Fale Conosco
+                        </a>
+                    </div>
+                    
+                    <div class="footer-badges">
+                        <div class="badge-footer">
+                            <span>⭐</span>
+                            <small>5.0 Avaliação</small>
+                        </div>
+                        <div class="badge-footer">
+                            <span>🏆</span>
+                            <small>Premiado</small>
+                        </div>
+                        <div class="badge-footer">
+                            <span>💖</span>
+                            <small>500+ Clientes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Bolos da Wilma. Todos os direitos reservados.</p>
+                    <p class="footer-dev">Feito com ❤️ e muito 🍫</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
